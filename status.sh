@@ -4,6 +4,8 @@ echo "Date: $(date)"
 echo "Uptime: $(uptime -p)"
 echo "Public IP: $(curl -s --max-time 3 ifconfig.me)"
 echo ""
+echo "Firewall status:"
+sudo ufw status
 echo "Disk usage:"
 df -h / | tail -1
 echo ""
