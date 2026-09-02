@@ -7,7 +7,7 @@ echo "Disk usage:"
 df -h / | tail -1
 echo ""
 echo "Memory usage:"
-free -h | grep mem
+free -h | grep Mem
 echo""
 echo "Top 5 processes by memory"
 ps aux --sort=-%mem | head -6
