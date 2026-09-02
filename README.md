@@ -11,6 +11,9 @@ commands like `uptime`, `df`, `free`, and `ps`.
 **Why it exists:** I got tired of typing four separate commands every
 time I SSH'd in just to see if the server was healthy. This script pulls
 the essentials into one readable report.
+**Requirements:**
+- Ubuntu 22.04 or later
+- A user with sudo access (needed for firewall check)
 
 **How do I run it:**
 ```bash
