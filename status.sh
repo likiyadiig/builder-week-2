@@ -2,7 +2,7 @@
 echo "=== Server Status: $(hostname) ==="
 echo "Date: $(date)"
 echo "Uptime: $(uptime -p)"
-echo "Public IP: $(curl -s ifconfig.me)"
+echo "Public IP: $(curl -s --max-time 3 ifconfig.me)"
 echo ""
 echo "Disk usage:"
 df -h / | tail -1
