@@ -13,10 +13,10 @@ echo "Memory usage:"
 free -h | grep Mem
 echo""
 echo "Network reachability check:"
-if ping -c 1 -W 2 8.8.8.8 > /dev/null 2>&1; then
-echo "Internet: reachable"
+if ping -c 1 -W 2 1.1.1.1 > /dev/null 2>&1; then
+echo "reachable"
 else
-echo "Internet: unreachable"
+echo "UNREACHABLE"
 fi
 echo ""
 echo "Top 5 processes by memory"
