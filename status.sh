@@ -12,5 +12,12 @@ echo ""
 echo "Memory usage:"
 free -h | grep Mem
 echo""
+echo "Network reachability check:"
+if ping -c 1 -W 2 1.1.1.1 > /dev/null 2>&1; then
+echo "reachable"
+else
+echo "UNREACHABLE"
+fi
+echo ""
 echo "Top 5 processes by memory"
 ps aux --sort=-%mem | head -6

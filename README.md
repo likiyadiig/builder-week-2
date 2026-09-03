@@ -33,6 +33,9 @@ Disk usage:
 Memory usage:
 Mem:          2.0Gi       450Mi       1.2Gi
 
+Network reachability check:
+reachable
+
 Top 5 processes by memory:
 USER   PID %CPU %MEM ...
 ```
