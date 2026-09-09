@@ -11,7 +11,7 @@ else
 echo "unavailable (needs sudo)"
 fi
 echo "Disk usage:"
-df -h / | tail -1
+timeout 5 df -h -x tmpfs -x devtmpfs -x squashfs -x overlay | awk 'NR>1 && $2 ~ /[GTP]$/ {if (n++) printf "  "; print}'
 echo ""
 echo "Memory usage:"
 free -h | grep Mem
