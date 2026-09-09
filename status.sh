@@ -19,5 +19,13 @@ else
 echo "UNREACHABLE"
 fi
 echo ""
+if apt_sim=$(timeout 10 apt-get -s -o Debug::NoLocking=true upgrade 2>/dev/null); then
+security_count=$(printf '%s\n' "$apt_sim" | grep -c -- '^Inst .*-security')
+else
+security_count="unknown"
+fi
+echo "Pending security updates:"
+echo "$security_count"
+echo ""
 echo "Top 5 processes by memory"
 ps aux --sort=-%mem | head -6
