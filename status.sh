@@ -5,7 +5,11 @@ echo "Uptime: $(uptime -p)"
 echo "Public IP: $(curl -s --max-time 3 ifconfig.me)"
 echo ""
 echo "Firewall status:"
-sudo ufw status
+if ufw_out=$(timeout 5 sudo -n ufw status 2>/dev/null); then
+echo "$ufw_out"
+else
+echo "unavailable (needs sudo)"
+fi
 echo "Disk usage:"
 df -h / | tail -1
 echo ""
